@@ -31,7 +31,7 @@ export default class GameController {
     }
     if (update.board !== undefined) {
       if (moves(game.board, update.board) > 1) {
-        throw new BadRequestError(` no more than one move per turn ${update} `)// ${(moves(update.board,game.board))} `
+        throw new BadRequestError(` no more than one move per turn`)
       }
     }
 
@@ -41,7 +41,7 @@ export default class GameController {
   @Post('/games')
   @HttpCode(201)
   createGame(
-    @Body({ validate: false }) game: Game // Partial <Game>   // should be only name
+    @Body({ validate: false }) game: Game 
   ) {
     game.color = colors[Math.floor(Math.random() * colors.length)]
     game.board = [['o', 'o', 'o'], ['o', 'o', 'o'], ['o', 'o', 'o']]
