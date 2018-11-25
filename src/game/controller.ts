@@ -34,7 +34,6 @@ export default class GameController {
         throw new BadRequestError(` no more than one move per turn`)
       }
     }
-
     return Game.merge(game, update).save()
   }
 

@@ -22,5 +22,4 @@ export default class Game extends BaseEntity {
 
   @Column({type:'json',nullable:true})
   board: board  
-
 }
